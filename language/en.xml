@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/6.0/language.xsd" languagecode="en" languagename="English" countrycode="gb">
+	<import>
+		<category name="wcf.form">
+			<item name="wcf.form.option.databaseRelation"><![CDATA[Database relation]]></item>
+		</category>
+		<category name="dev.hanashi.wsdb">
+			<item name="dev.hanashi.wsdb.relation.database"><![CDATA[Database]]></item>
+			<item name="dev.hanashi.wsdb.relation.crossLink"><![CDATA[Cross link records]]></item>
+			<item name="dev.hanashi.wsdb.relation.crossLink.description"><![CDATA[By activating this option, the entries in this database are displayed in the entries of the database to which the reference refers.]]></item>
+			<item name="dev.hanashi.wsdb.relation.multipleSelection"><![CDATA[Multiple selection]]></item>
+		</category>
+	</import>
+</language>
