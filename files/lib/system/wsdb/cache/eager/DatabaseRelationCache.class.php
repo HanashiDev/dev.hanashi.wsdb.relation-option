@@ -22,6 +22,12 @@ final class DatabaseRelationCache extends AbstractEagerCache
 
         $references = [];
         foreach ($optionList as $option) {
+            $configuration = $option->getConfiguration();
+            $crossLink = $configuration['relationCrossLink'] ?? 0;
+            if (!$crossLink) {
+                continue;
+            }
+
             $sql = "
                 SELECT      recordID,
                             option" . $option->optionID . " value
