@@ -23,6 +23,9 @@
 	</excludedpackages>
 	<instructions type="install">
 		<instruction type="file"/>
+		<instruction type="template"/>
 		<instruction type="language"/>
+		<instruction type="eventListener"/>
+		<instruction type="templateListener"/>
 	</instructions>
 </package>

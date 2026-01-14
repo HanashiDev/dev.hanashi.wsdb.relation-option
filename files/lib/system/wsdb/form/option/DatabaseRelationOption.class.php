@@ -119,6 +119,9 @@ final class DatabaseRelationOption extends AbstractFormOption
 
             $records = [];
             foreach ($recordList as $record) {
+                if (!$record->canRead()) {
+                    continue;
+                }
                 $records[$record->databaseID][$record->recordID] = $record->getTitle();
             }
             $this->records = $records;

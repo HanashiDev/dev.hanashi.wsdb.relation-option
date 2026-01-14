@@ -16,13 +16,19 @@ final class DatabaseRelationFormatter implements IFormOptionFormatter
     {
         $values = \explode(',', $value);
         $records = $this->getRecords(ArrayUtil::toIntegerArray($values));
+        $records = \array_filter($records, static fn (Record $record) => $record->canRead());
         if ($records === []) {
             return '';
         }
 
         $recordLinks = \array_map(
             static function (Record $record): string {
-                return StringUtil::getAnchorTag($record->getLink(), $record->getTitle(), true, true);
+                return StringUtil::getAnchorTag(
+                    $record->getLink(),
+                    $record->getTitle(),
+                    true,
+                    (bool)$record->getDatabase()->enableUgc
+                );
             },
             $records
         );

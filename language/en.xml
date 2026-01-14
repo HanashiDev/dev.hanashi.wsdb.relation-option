@@ -9,6 +9,7 @@
 			<item name="dev.hanashi.wsdb.relation.crossLink"><![CDATA[Cross link records]]></item>
 			<item name="dev.hanashi.wsdb.relation.crossLink.description"><![CDATA[By activating this option, the entries in this database are displayed in the entries of the database to which the reference refers.]]></item>
 			<item name="dev.hanashi.wsdb.relation.multipleSelection"><![CDATA[Multiple selection]]></item>
+			<item name="dev.hanashi.wsdb.relation.connected"><![CDATA[Connected]]></item>
 		</category>
 	</import>
 </language>
