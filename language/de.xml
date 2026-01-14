@@ -6,7 +6,7 @@
 		</category>
 		<category name="dev.hanashi.wsdb">
 			<item name="dev.hanashi.wsdb.relation.database"><![CDATA[Datenbank]]></item>
-			<item name="dev.hanashi.wsdb.relation.crossLink"><![CDATA[Querverweisen zwischen Einträgen]]></item>
+			<item name="dev.hanashi.wsdb.relation.crossLink"><![CDATA[Querverweise zwischen Einträgen]]></item>
 			<item name="dev.hanashi.wsdb.relation.crossLink.description"><![CDATA[Durch Aktivieren dieser Option werden die Einträge dieser Datenbank in den Einträgen der Datenbank angezeigt, auf die sich der Verweis bezieht.]]></item>
 			<item name="dev.hanashi.wsdb.relation.multipleSelection"><![CDATA[Mehrfachauswahl]]></item>
 		</category>
