@@ -22,7 +22,7 @@ final class DatabaseRelationOption extends AbstractFormOption
     /**
      * @var array<int, array<int, string>>
      */
-    private array $records;
+    private array $records = [];
 
     #[\Override]
     public function getConfigurationFormFields(): array
@@ -101,7 +101,9 @@ final class DatabaseRelationOption extends AbstractFormOption
      */
     private function getRecords(int $databaseID): array
     {
-        if (!isset($this->records)) {
+        if (!isset($this->records[$databaseID])) {
+            $this->records[$databaseID] = [];
+
             $recordList = new RecordList();
             $recordList->getConditionBuilder()->add('databaseID = ?', [$databaseID]);
             $recordList->sqlSelects = "(
@@ -117,16 +119,14 @@ final class DatabaseRelationOption extends AbstractFormOption
             $recordList->sqlOrderBy = 'title';
             $recordList->readObjects();
 
-            $records = [];
             foreach ($recordList as $record) {
                 if (!$record->canRead()) {
                     continue;
                 }
-                $records[$record->databaseID][$record->recordID] = $record->getTitle();
+                $this->records[$record->databaseID][$record->recordID] = $record->getTitle();
             }
-            $this->records = $records;
         }
 
-        return $this->records[$databaseID] ?? [];
+        return $this->records[$databaseID];
     }
 }
